@@ -6,7 +6,7 @@ function App() {
     return (
         <div style={{display: 'flex'}}>
             <SideNav />
-            <Map />
+            {/* <Map /> */}
         </div>
   );
 }

@@ -1,8 +1,33 @@
 import React, { useState , useEffect} from 'react';
 import ReactMapGL ,{Marker, Popup} from 'react-map-gl';
-import * as coronaMarker from './data.json';
+// import * as coronaMarker from './data.json';
+import useSwr from 'swr';
+
+const fetcher = (...args) => fetch(...args).then(response => response.json());
+
+function getMarker(cases)
+{
+    if(cases >= 8000)
+    {
+        var marker = "pink.svg";
+        marker = marker.toString();
+        return marker;
+    }
+    else if(cases >= 500)
+    {
+        var marker = "yellow.svg";
+        marker = marker.toString();
+        return marker;
+    }
+    else{
+        var marker = "green.svg";
+        marker = marker.toString();
+        return marker;
+    }
+}
 
 function Map() {
+    const url = 'https://disease.sh/v2/countries';
     const markerStyle = {
         background: 'none',
         border: 'none',
@@ -15,6 +40,9 @@ function Map() {
         width: '80%',
         zoom: 10
     });
+    const {data,error} = useSwr(url,fetcher);
+    const infected = data && !error ? data : [];
+    
 
     useEffect(() => {
         const listener = e => {
@@ -31,7 +59,7 @@ function Map() {
     } , [])
 
     const [selectedMarker,setSelectedMarker] = useState(null);
-
+ 
     return (
         
             <ReactMapGL {...viewport} 
@@ -41,11 +69,11 @@ function Map() {
             onViewportChange = {(viewport) => { setViewport(viewport)}}
             mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}>
 
-            {coronaMarker.data.map((mark) => (
+            {infected.map((mark) => (
                 
-                <Marker key={mark.id}
-                latitude={mark.latitude}
-                longitude={mark.longitude}
+                <Marker key={mark.countryInfo._id}
+                latitude={mark.countryInfo.lat}
+                longitude={mark.countryInfo.long}
                 >
                     <button style={markerStyle}
                     onClick={e => {
@@ -53,7 +81,7 @@ function Map() {
                         setSelectedMarker(mark);
                     }}
                     >
-                        <img src='pink.svg' alt="sk" style={{width: (mark.infected)%50}}></img>
+                        <img src={getMarker(mark.cases)} alt="sk" style={{width: (mark.cases)%70}}></img>
                     </button>
                 </Marker>
             ))}
@@ -63,14 +91,13 @@ function Map() {
                 onClose={() => {
                     setSelectedMarker(null)
                 }}
-                latitude={selectedMarker.latitude}
-                longitude={selectedMarker.longitude}>
+                latitude={selectedMarker.countryInfo.lat}
+                longitude={selectedMarker.countryInfo.long}>
                     <div>
-                        <h2>{selectedMarker.name},{selectedMarker.country}</h2>
-                        <p>Infected : {selectedMarker.infected}</p>
+                        <h2>{selectedMarker.country}</h2>
                         <p>Recovered : {selectedMarker.recovered}</p>
-                        <p>Dead : {selectedMarker.dead}</p>
-                        <p>Sick : {selectedMarker.sick}</p>
+                        <p>Dead : {selectedMarker.deaths}</p>
+                        <p>Active : {selectedMarker.active}</p>
                     </div>
                 </Popup>
             ) : null}

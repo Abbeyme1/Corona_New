@@ -2,7 +2,7 @@
   "name": "corona",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://localhost:3000",
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -11,7 +11,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-map-gl": "^5.2.5",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "swr": "^0.2.2",
+    "use-supercluster": "^0.2.8"
   },
   "scripts": {
     "start": "react-scripts start",
