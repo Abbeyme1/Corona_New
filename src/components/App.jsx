@@ -2,7 +2,7 @@ import React from 'react';
 import Map from './Map';
 import SideNav from './sideNav';
 import AllCases from './AllCases';
-import Footer from './Footer'
+import Footer from './Footer';
 
 
 function App() {
