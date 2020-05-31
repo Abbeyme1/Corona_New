@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 class Cases extends Component {
 
     constructor(){
         super();
-        this.state = {Cases: 0};
+        this.state = {TotalConfirmed:'',TotalDeath: '',TotalRecovered:''};
     }
 
     componentDidMount = ()=> {
-        fetch("http://localhost:5000/getVal")
+        fetch("/api")
         .then(res => res.json())
-        .then(cases => this.setState({cases},() => console.log(cases)));
+        .then(cases => cases['Global'])
+        .then(val => this.setState({TotalConfirmed: val['TotalConfirmed'], TotalDeath:val['TotalDeaths'], TotalRecovered: val['TotalRecovered']}))
     }
 
 render() {
@@ -34,9 +34,9 @@ render() {
                     <td>Total Recovored</td>
                 </tr>
                 <tr style={{fontSize:'5.5rem'}}>
-                    <td>25555</td>
-                    <td style={{color:'rgb(255,0,100)'}}>{this.state.Cases}</td>
-                    <td style={{color:'rgb(0,225,130)'}}>25555</td>
+                    <td>{this.state.TotalConfirmed}</td>
+                    <td style={{color:'rgb(255,0,100)'}}>{this.state.TotalDeath}</td>
+                    <td style={{color:'rgb(0,225,130)'}}>{this.state.TotalRecovered}</td>
                 </tr>
             </table>
         </div>

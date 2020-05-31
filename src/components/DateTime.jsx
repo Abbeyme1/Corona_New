@@ -17,7 +17,7 @@ function DateTime() {
     const dateStyle = {
         color: 'white',
         textAlign: 'center',
-        fontSize: '3.2rem',
+        fontSize: '2.1rem',
         marginTop: '5.5%'
     }
 

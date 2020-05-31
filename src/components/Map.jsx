@@ -15,12 +15,12 @@ function getMarker(cases)
     }
     else if(cases >= 500)
     {
-        var marker = "yellow.svg";
+        marker ="yellow.svg";
         marker = marker.toString();
         return marker;
     }
     else{
-        var marker = "green.svg";
+        marker = "green.svg";
         marker = marker.toString();
         return marker;
     }
@@ -36,8 +36,8 @@ function Map() {
     const [viewport, setViewport] = useState({
         latitude: 45.467134581917357,
         longitude: -75.546518086577947,
-        height: '100vh',
-        width: '80%',
+        height: '100%',
+        width: '100%',
         zoom: 10
     });
     const {data,error} = useSwr(url,fetcher);
