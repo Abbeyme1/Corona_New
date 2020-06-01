@@ -3,6 +3,7 @@ import Map from './Map';
 import SideNav from './sideNav';
 import AllCases from './AllCases';
 import Footer from './Footer';
+import CountryList from './CountryList';
 
 
 function App() {
@@ -24,8 +25,8 @@ function App() {
                     <Footer />
                 </div>
             </div>
-            <div style={{height: '100vh',width:'20vw',backgroundColor:'red'}}>
-                <div style={{height: '75vh', width:'100%',backgroundColor:'yellow'}}></div>
+            <div style={{height: '100vh',width:'20vw'}}>
+                <div style={{height: '75vh', width:'100%'}}><CountryList/></div>
                 <div style={{height: '25vh', width:'100%',backgroundColor:'purple'}}></div>
             </div>
         </div>
