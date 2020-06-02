@@ -34,11 +34,11 @@ function Map() {
         cursor: 'pointer'
     }
     const [viewport, setViewport] = useState({
-        latitude: 45.467134581917357,
-        longitude: -75.546518086577947,
+        latitude: 30.46,
+        longitude: 70.54,
         height: '100%',
         width: '100%',
-        zoom: 10
+        zoom: 4
     });
     const {data,error} = useSwr(url,fetcher);
     const infected = data && !error ? data : [];

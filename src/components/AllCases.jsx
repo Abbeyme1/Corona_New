@@ -16,24 +16,26 @@ class AllCases extends Component {
 
 render(){
     const divStyle=
-    {backgroundColor:'white',
-    height:'60%',
-    width:'18%',
+    {backgroundColor:'rgba(148, 148, 148, 1)',
+    height:'50%',
+    width:'15%',
     margin:'0 auto',
     borderRadius: '60px',
 };
 
 const headingStyle = {
-    fontSize: '3.2rem',
+    fontSize: '3rem',
     fontFamily:'sans-serif',
-    marginLeft: '5%'
+    marginLeft: '8%',
+    marginTop: '8%'
     
 }
 
 const value = {
     marginTop:'0',
-    fontSize: '7rem',
-    marginLeft: '10%'
+    fontSize: '9rem',
+    marginLeft: '18%',
+    fontWeight: '500'
 }
     return (
         <div style={{display:'flex',flexDirection:'row',height:'100%',justifyContent:'center',alignItems:'center'}}>
@@ -52,7 +54,7 @@ const value = {
                 <p style={value}>{this.state.TotalDeath}</p>
             </div>
             <div style={divStyle}>
-                <h2 style={headingStyle}><span style={{color:'yellow'}}>Total Recovered</span></h2>
+                <h2 style={headingStyle}><span style={{color:'blue'}}>Total Recovered</span></h2>
                 <p style={value}>{this.state.TotalRecovered}</p>
             </div>
             
@@ -62,3 +64,7 @@ const value = {
 }
 
 export default AllCases;
+
+
+// rgba(246, 93, 78, 1)
+// rgba(246, 230, 87, 1)

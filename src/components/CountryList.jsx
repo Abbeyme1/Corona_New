@@ -27,9 +27,10 @@ render() {
     const flagStyle = {
 
         margin:'5%',
-        backgroundColor:'white',
+        backgroundColor:'rgba(36, 36, 36, 1)',
         fontSize: '7rem',
-        borderRadius: '13px'
+        borderRadius: '13px',
+        color:'white'
     }
 
     const tdStyle = {
