@@ -27,8 +27,9 @@ function App() {
                 </div>
             </div>
             <div style={{height: '100vh',width:'20vw'}}>
-                <div style={{height: '75vh', width:'100%',backgroundColor:'rgba(36, 36, 36, 1)'}}><CountryList/></div>
-                <div style={{height: '25vh', width:'100%',backgroundColor:'rgba(36, 36, 36, 1)'}}>
+                <div style={{height: '73vh', width:'100%',backgroundColor:'rgba(36, 36, 36, 1)'}}><CountryList/></div>
+                <div style={{height:'4vh',backgroundColor:'rgba(36, 36, 36, 1)'}}></div>
+                <div style={{height: '23vh', width:'100%',backgroundColor:'rgba(36, 36, 36, 1)'}}>
                     <Notice />
                 </div>
             </div>

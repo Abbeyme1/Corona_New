@@ -1,8 +1,9 @@
 .mainContainer{
     position: relative;
-    width: 70%;
-    height: 76%;   
-    margin: 1.5%; 
+    width: 26.5%;
+    height: 75%;   
+    margin: 0 auto; 
+    
      
 }
 
@@ -13,10 +14,15 @@
     transform-style: preserve-3d;
     transition: all 0.5s ease;
     
+    
 }
 
 .theCard:hover{
     transform: rotateX(180deg);
+}
+
+img {
+    border-radius: 28px;
 }
 
 .theFront{
@@ -26,6 +32,7 @@
     backface-visibility: hidden;
     background-color: #ffc728;
     border-radius: 28px;
+    
 }
 
 .theBack{
@@ -35,6 +42,18 @@
     backface-visibility: hidden;
     background-color: red;
     transform: rotateX(180deg);
+    border-radius: 28px;
+
+}
+
+
+/* css for notice.jsx */
+
+.bg {
+    background-image: url('ess.png');
+    /* background-position: center; */
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 28px;
 
 }

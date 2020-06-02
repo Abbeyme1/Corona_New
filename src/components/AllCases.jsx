@@ -16,7 +16,8 @@ class AllCases extends Component {
 
 render(){
     const divStyle=
-    {backgroundColor:'rgba(148, 148, 148, 1)',
+    {
+    // backgroundColor:'rgba(148, 148, 148, 1)',
     height:'50%',
     width:'15%',
     margin:'0 auto',
@@ -26,7 +27,7 @@ render(){
 const headingStyle = {
     fontSize: '3rem',
     fontFamily:'sans-serif',
-    marginLeft: '8%',
+    marginLeft: '25%',
     marginTop: '8%'
     
 }
@@ -40,22 +41,22 @@ const value = {
     return (
         <div style={{display:'flex',flexDirection:'row',height:'100%',justifyContent:'center',alignItems:'center'}}>
             <div style={divStyle}>
-                <h2 style={headingStyle}>New Confirmed</h2>
-                <p style={value}>{this.state.NewConfirmed}</p>
+                <h2 style={headingStyle}><span style={{color:'yellow'}}>New Confirmed</span></h2>
+                <p style={value}><span style={{color:'yellow'}}>{this.state.NewConfirmed}</span></p>
             </div>
 
             <div style={divStyle}>
-                <h2 style={headingStyle}>Total Confirmed</h2>
-                <p style={value}>{this.state.TotalConfirmed}</p>
+                <h2 style={headingStyle}><span style={{color:'blue'}}>Total Confirmed</span></h2>
+                <p style={value}><span style={{color:'blue'}}>{this.state.TotalConfirmed}</span></p>
             </div>
 
             <div style={divStyle}>
                 <h2 style={headingStyle}><span style={{color:'red'}}>Total Death</span></h2>
-                <p style={value}>{this.state.TotalDeath}</p>
+                <p style={value}><span style={{color:'red'}}>{this.state.TotalDeath}</span></p>
             </div>
             <div style={divStyle}>
-                <h2 style={headingStyle}><span style={{color:'blue'}}>Total Recovered</span></h2>
-                <p style={value}>{this.state.TotalRecovered}</p>
+                <h2 style={headingStyle}><span style={{color:'green'}}>Total Recovered</span></h2>
+                <p style={value}><span style={{color:'green'}}>{this.state.TotalRecovered}</span></p>
             </div>
             
         </div>
